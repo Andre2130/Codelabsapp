@@ -37,6 +37,15 @@ class MainActivity : AppCompatActivity() {
         //create an Intent to start the second activity
         val randomIntent = Intent(this, SecondActivity::class.java)
 
+        //get current numberfrom textview
+        val countString = textView.text.toString()
+
+        //convert countstring to a number
+        val count = Integer.parseInt(countString)
+
+        //Add the count to the extras fro the intent
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+
         //start the second activity
         startActivity(randomIntent)
     }
